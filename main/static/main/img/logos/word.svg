@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+  <title>Microsoft Word</title>
+  <rect x="7" y="10" width="50" height="44" rx="7" fill="#2B579A"/>
+  <rect x="30" y="17" width="20" height="5" rx="1" fill="#9DC3F7"/>
+  <rect x="30" y="27" width="20" height="5" rx="1" fill="#9DC3F7"/>
+  <rect x="30" y="37" width="20" height="5" rx="1" fill="#9DC3F7"/>
+  <path d="M11 18h24v28H11z" fill="#1F4E8C"/>
+  <path d="M16 25h4l2 9 2.4-9H28l2.4 9 2-9h4l-4 14h-4l-2.3-8.1L23.7 39h-4z" fill="#FFFFFF"/>
+</svg>

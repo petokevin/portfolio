@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+  <title>Microsoft Visio</title>
+  <rect x="6" y="10" width="52" height="44" rx="7" fill="#3955A3"/>
+  <rect x="28" y="16" width="20" height="13" rx="2" fill="#8EA0DF"/>
+  <rect x="18" y="36" width="16" height="12" rx="2" fill="#8EA0DF"/>
+  <rect x="40" y="36" width="16" height="12" rx="2" fill="#8EA0DF"/>
+  <path d="M38 29v7M26 36v-7h22v7" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11 18h23v28H11z" fill="#243A85"/>
+  <path d="M18 25l5 14 5-14h-4l-2 7-2-7z" fill="#FFFFFF"/>
+</svg>

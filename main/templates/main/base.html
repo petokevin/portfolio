@@ -1,0 +1,58 @@
+{% load static icons %}
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e1f22">
+  <meta name="description" content="Pető Márk Kevin — IT Project Manager üzleti és technikai háttérrel. Projektek, rendszerintegrációk, technológiák és szakmai tapasztalat.">
+  <title>Pető Márk Kevin | IT Project Manager</title>
+  <link rel="icon" href="{% static 'main/img/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <script src="{% static 'main/js/main.js' %}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
+  <header class="ide-toolbar">
+    <a class="brand" href="#rolam" aria-label="Pető Márk Kevin – kezdőlap"><span class="brand-mark">PMK<span>_</span></span><span class="toolbar-project">kevin.portfolio</span></a>
+    <span class="branch mono">{% icon 'workflow' %} main</span>
+    <span class="toolbar-title">Pető Márk Kevin <span>— IT Project Manager</span></span>
+    <aside class="live-panel toolbar-live-panel" aria-label="Magyarországi idő és időjárás" data-live-panel>
+      <div class="live-tile">
+        <span class="live-icon">{% icon 'clock' %}</span>
+        <div>
+          <span class="live-label mono">Europe/Budapest</span>
+          <time class="live-time mono" data-live-time datetime="">--:--:--</time>
+          <span class="live-date" data-live-date>Magyarországi idő betöltése...</span>
+        </div>
+      </div>
+      <div class="live-tile weather-tile">
+        <span class="live-icon weather">{% icon 'cloud-sun' %}</span>
+        <div>
+          <span class="live-label mono" data-weather-location>Magyarország / Budapest</span>
+          <span class="live-weather"><strong data-weather-temp>--°C</strong><span data-weather-summary>Időjárás betöltése...</span></span>
+          <span class="live-weather-meta"><span data-weather-wind>Szél: -- km/h</span><span data-weather-humidity>Páratartalom: --%</span></span>
+        </div>
+      </div>
+    </aside>
+    <a class="run-link" href="{% static 'main/docs/Peto_Mark_Kevin_cv.pdf' %}" download><span aria-hidden="true">↓</span> CV letöltése</a>
+    <a class="run-link" href="#projektek"><span aria-hidden="true">▷</span> Projektjeim</a>
+  </header>
+  <div class="editor-shell">
+    <nav class="editor-tabs" aria-label="Szerkesztőfülek">
+      <span class="tab-indicator" aria-hidden="true"></span>
+      <a href="#rolam" data-file="about.py" class="active" aria-current="location"><span class="py-file" aria-hidden="true">py</span> about.py</a>
+      <a href="#keszsegek" data-file="technologies.py"><span class="py-file" aria-hidden="true">py</span> technologies.py</a>
+      <a href="#management" data-file="management.py"><span class="py-file" aria-hidden="true">py</span> management.py</a>
+      <a href="#projektek" data-file="projects.py"><span class="py-file" aria-hidden="true">py</span> projects.py</a>
+      <a href="#tapasztalat" data-file="experience.py"><span class="py-file" aria-hidden="true">py</span> experience.py</a>
+      <a href="#tanulmanyok" data-file="education.py"><span class="py-file" aria-hidden="true">py</span> education.py</a>
+      <a href="#kapcsolat" data-file="contact.py"><span class="py-file" aria-hidden="true">py</span> contact.py</a>
+    </nav>
+    <div class="editor-breadcrumb mono"><span>kevin.portfolio</span><span>/</span><span>portfolio</span><span>/</span><span id="current-file">about.py</span></div>
+    <main id="main">{% block content %}{% endblock %}</main>
+    <footer class="container footer"><p>© {% now 'Y' %} Pető Márk Kevin</p><span class="mono"># Projects. Systems. People. Delivery.</span><a href="#rolam">Vissza az elejére {% icon 'arrow' %}</a></footer>
+  </div>
+  <div class="ide-statusbar"><span><span class="status-dot"></span> Nyitott új kihívásokra</span><span class="status-module mono">about.py</span><span class="status-meta mono">UTF-8 <span>Python / Django</span><span class="python-indicator">●</span></span></div>
+</body>
+</html>

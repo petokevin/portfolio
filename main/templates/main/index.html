@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static icons %}
+{% block content %}
+<section id="rolam" class="hero section-anchor">
+  
+  <div class="container">
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <div class="code-heading"><span class="line-number" aria-hidden="true">01</span><code><span class="syntax-keyword">class</span> <span class="syntax-class">ProjectManager</span>:</code></div>
+        <p class="code-comment mono"># Üzleti szemlélet. Technikai magabiztosság.</p><h1>Pető Márk Kevin<span>IT Project <span class="gradient-text">Manager.</span></span></h1>
+        <p class="docstring-mark mono" aria-hidden="true">&quot;&quot;&quot;</p><p class="intro">IT Project Manager, üzleti és technikai háttérrel. IT-fejlesztési projektek koordinálásával, üzleti igények felmérésével, specifikációk készítésével és fejlesztői csapatok támogatásával foglalkozom.</p><p class="docstring-mark closing mono" aria-hidden="true">&quot;&quot;&quot;</p>
+        <div class="hero-actions"><a class="button button-primary" href="#projektek">Projektjeim {% icon 'right' %}</a><a class="button button-secondary" href="{% static 'main/docs/Peto_Mark_Kevin_cv.pdf' %}" download>CV letöltése {% icon 'file' %}</a><a class="button button-secondary" href="#kapcsolat">Lépjünk kapcsolatba {% icon 'arrow' %}</a></div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-filebar mono"><span>{% icon 'file' %} profile.png</span><span>hover preview</span></div><div class="portrait-frame"><img class="portrait-image portrait-image-primary" src="{% static 'main/img/profile.png' %}" alt="Pető Márk Kevin portréja" width="1002" height="1216" fetchpriority="high"><img class="portrait-image portrait-image-alt" src="{% static 'main/img/profile_2.png' %}" alt="" width="1151" height="1366" aria-hidden="true"><div class="portrait-shade"></div><div class="portrait-caption"><span class="mono">self.role = <span class="syntax-string">"IT Project Manager"</span></span></div></div>
+        
+        <div class="portrait-filefooter mono">1002 × 1216 <span>grayscale</span></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>30<span>+</span></strong><span>projekt</span></div>
+      <div class="stat"><strong>4<span>+</span></strong><span>év IT / adat tapasztalat</span></div>
+      <div class="stat stat-description">{% icon 'layers' %}<div><strong>Párhuzamos projektek</strong><span>Összehangolt koordináció</span></div></div>
+      <div class="stat stat-description">{% icon 'workflow' %}<div><strong>Üzlet & technológia</strong><span>Közös nyelv. Közös cél.</span></div></div>
+    </div>
+    <div id="python-console" class="terminal reveal">
+      <div class="terminal-bar"><span class="console-tab">{% icon 'terminal' %} Python Console</span></div>
+      <div class="terminal-body terminal-body-simple"><div class="console-command"><span class="syntax-keyword">&gt;&gt;&gt;</span> <span>print("portfolio")</span></div><p class="console-result">portfolio</p><div class="console-command"><span class="syntax-keyword">&gt;&gt;&gt;</span> <span class="cursor" aria-hidden="true">▌</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="keszsegek" class="section section-anchor container">
+  <div class="section-heading reveal"><div><p class="section-label"><span class="syntax-keyword">import</span> technologies <span class="code-comment"># eszköztár</span></p><h2>Technologies <span class="muted">&</span> Tools<span class="accent">.</span></h2></div></div>
+  <div class="technology-grid">{% for name, symbol, description, color in technologies %}<div class="technology-card reveal"><span class="icon-box logo-box {{ color }}">{% with logo_path='main/img/logos/'|add:symbol|add:'.svg' %}<img class="brand-logo" src="{% static logo_path %}" alt="{{ name }} logó" loading="lazy">{% endwith %}</span><div><h3>{{ name }}</h3><p>{{ description }}</p></div></div>{% endfor %}</div>
+</section>
+
+<section id="management" class="management-section section section-anchor">
+  <div class="container">
+    <div class="management-heading reveal">
+      <div><p class="section-label"><span class="syntax-keyword">def</span> <span class="syntax-function">manage_project</span>():</p><h2>Az igénytől <span class="gradient-text">az élesítésig.</span></h2></div>
+    </div>
+    <ol class="management-pillars">
+      <li class="management-pillar reveal">
+        <div class="pillar-top"><span class="pillar-icon">{% icon 'workflow' %}</span><span class="pillar-number mono" aria-hidden="true">plan()</span></div>
+        <h3>Átlátható tervezés</h3>
+      </li>
+      <li class="management-pillar reveal">
+        <div class="pillar-top"><span class="pillar-icon">{% icon 'users' %}</span><span class="pillar-number mono" aria-hidden="true">collaborate()</span></div>
+        <h3>Összehangolt csapat</h3>
+      </li>
+      <li class="management-pillar reveal">
+        <div class="pillar-top"><span class="pillar-icon">{% icon 'rocket' %}</span><span class="pillar-number mono" aria-hidden="true">deliver()</span></div>
+        <h3>Átgondolt megvalósítás</h3>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="projektek" class="section section-anchor container">
+  <div class="section-heading reveal"><div><p class="section-label">projects = [ <span class="code-comment"># válogatott munkák</span></p><h2>Igényből <span class="gradient-text">megoldás.</span></h2></div><p>Rendszerek, integrációk és digitális felületek.<br>Válogatás a projektjeimből.</p></div>
+  <div class="projects-grid">{% for project in projects %}<article class="project-card reveal"><div class="project-top"><span class="icon-box project-logo-box {{ project.color }}">{% with logo_path='main/img/project-logos/'|add:project.icon|add:'.svg' %}<img class="project-logo" src="{% static logo_path %}" alt="{{ project.name }} logó" loading="lazy">{% endwith %}</span><span class="mono project-number">project_{{ forloop.counter|stringformat:'02d' }}.py</span></div><p class="project-category {{ project.color }}">{{ project.category }}</p><h3>{{ project.name }}</h3><p class="project-description">{{ project.description }}</p></article>{% endfor %}</div><p class="code-closing mono" aria-hidden="true">]</p>
+</section>
+
+<section id="tapasztalat" class="experience-section section section-anchor">
+  <div class="container"><div class="section-heading reveal"><div><p class="section-label"><span class="syntax-keyword">class</span> <span class="syntax-class">Experience</span>:</p><h2>Tapasztalat<span class="accent">.</span></h2></div><p>Adatokból összefüggések.<br>Összefüggésekből sikeres projektek.</p></div><div class="timeline">{% for item in experience %}<article class="timeline-item reveal {% if item.current %}current{% endif %}"><div class="timeline-date"><span class="mono">{{ item.date }}</span>{% if item.current %}<span class="current-label"><span class="status-dot"></span> Jelenlegi pozíció</span>{% endif %}</div><div class="timeline-marker timeline-logo-marker">{% with logo_path='main/img/experience-logos/'|add:item.logo %}<img class="experience-logo" src="{% static logo_path %}" alt="{{ item.organization }} logó" loading="lazy">{% endwith %}</div><div class="timeline-content"><h3>{{ item.role }}</h3><p class="organization">{{ item.organization }}</p>{% if item.department %}<p class="department">{{ item.department }}</p>{% endif %}<ul>{% for task in item.tasks %}<li>{{ task }}</li>{% endfor %}</ul></div></article>{% endfor %}</div></div>
+</section>
+
+<section id="tanulmanyok" class="section section-anchor container">
+  <div class="section-heading reveal"><div><p class="section-label"><span class="syntax-keyword">class</span> <span class="syntax-class">Education</span>:</p><h2>Tanulmányok<span class="accent">.</span></h2></div></div><div class="education-grid">{% for item in education %}<article class="education-card reveal"><div class="education-top"><span class="icon-box education-logo-box">{% with logo_path='main/img/education-logos/'|add:item.logo %}<img class="education-logo" src="{% static logo_path %}" alt="{{ item.school }} logó" loading="lazy">{% endwith %}</span><span class="degree mono">{{ item.degree }}</span></div><span class="education-date mono">{{ item.date }}</span><h3>{{ item.title }}</h3><p class="school">{{ item.school }}</p><p class="topics">{{ item.topics }}</p></article>{% endfor %}</div>
+</section>
+
+<section id="kapcsolat" class="section section-anchor container contact-section"><div class="contact-card reveal"><div><p class="section-label"><span class="syntax-keyword">def</span> <span class="syntax-function">contact</span>():</p><h2>Kapcsolat<span class="accent">.</span></h2><p>Írj e-mailt, vagy keress LinkedInen.</p></div><div class="contact-actions">{% if contact_email %}<a class="button button-primary" href="mailto:{{ contact_email }}">{% icon 'mail' %} Írj nekem {% icon 'arrow' %}</a><a class="contact-email" href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% endif %}{% if contact_linkedin %}<a class="button button-secondary" href="{{ contact_linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn {% icon 'arrow' %}</a>{% endif %}<span class="contact-note"><span class="status-dot"></span> Nyitott vagyok új kihívásokra</span></div></div></section>
+{% endblock %}
